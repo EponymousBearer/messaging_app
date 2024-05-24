@@ -1,14 +1,17 @@
 .auth {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-items: center;
 }
 
 .auth button {
-    width: 200px;
-    height: 50px;
+    padding-inline: 30px;
+    padding-block: 10px;
     border: none;
-    background-color: #3b5998;
-    color: white;
+    background-color: white ;
+    color: green;
     border-radius: 8px;
     font-size: 18px;
     cursor: pointer;
+    margin-left: 10px;
 }

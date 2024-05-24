@@ -2,16 +2,17 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import { getFirestore } from "@firebase/firestore";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-
+// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBw8kPQkxNvVY2cB6ghVc20FlxhP4e_Xs4",
-  authDomain: "testproj-531d7.firebaseapp.com",
-  projectId: "testproj-531d7",
-  storageBucket: "testproj-531d7.appspot.com",
-  messagingSenderId: "705585244276",
-  appId: "1:705585244276:web:6905459d1c0800f7ba0921",
-  measurementId: "G-KWJSWQRNV0"
+  apiKey: "AIzaSyBVIckisi7qdLU4ZRhTy6fKXvA7uTC9vKM",
+  authDomain: "realtime-messaging-web-app.firebaseapp.com",
+  projectId: "realtime-messaging-web-app",
+  storageBucket: "realtime-messaging-web-app.appspot.com",
+  messagingSenderId: "426256333472",
+  appId: "1:426256333472:web:0af342cfa1ece5ffc7a7c5"
 };
 
 // Initialize Firebase

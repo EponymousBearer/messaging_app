@@ -1,31 +1,98 @@
+/* Background: #F7F9FC (light grayish blue)
+Primary Text: #333333 (dark gray)
+Secondary Text: #555555 (medium gray)
+Primary Accent: #007BFF (blue)
+Secondary Accent: #28A745 (green) 
+Use a clean and modern sans-serif font (e.g., Helvetica, Arial, or Google Fonts like Roboto or Open Sans).
+Ensure good readability with appropriate font sizes (e.g., 14-16px for body text, 18-20px for headers).
+*/
 body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* background-color: #F7F9FC;
+  color: #333333; */
   padding: 0;
   margin: 0;
+
+}
+
+.room {
+  display: flex;
+  width: 100%;
+  height: 85vh;
+  /* background-color: aqua; */
+}
+
+.content {
+  width: 75%;
+  padding: 20px;
+  /* float: right; */
+  /* margin-left: 30%; */
+  /* background-color: #007bff; */
+}
+
+.sidebar {
+  width: 25%;
+  padding-left: 60px;
+  padding-top: 50px;
+  /* position: fixed;
+  z-index: -1;
+  left: 0;
+  top: 70px; */
+  /* border-right: 1px solid; */
+  border: none;
+  height: 100%;
+  /* overflow-y: auto; */
+  /* background-color: #f4f4f4; */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+
+  .content,
+  .sidebar {
+    width: 100%;
+    margin-left: 0;
+    /* float: none; */
+  }
+
+  .sidebar {
+    position: static;
+    height: auto;
+    box-shadow: none;
+  }
 }
 
 .App {
   display: flex;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   flex-direction: column;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 }
 
-.app-header {
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 88vh;
+  justify-content: center;
   text-align: center;
-  background-color: #3b5998;
-  color: white;
-  width: 100%;
+  line-height: 0px;
+}
+
+.main h1 {
+  font-size: 50px;
+}
+
+.main h2 {
+  font-size: 35px;
 }
 
 .app-container {
   margin-top: 50px;
-}
-
-.room {
-  display: flex;
-  flex-direction: column;
+  width: 100%;
+  /* margin-inline: 500px; */
 }
 
 .room label {
@@ -44,21 +111,105 @@ body {
   text-align: center;
   margin: 5px;
 }
-.room button {
-  width: 210px;
-  height: 40px;
+
+/* .room button {
   border: none;
-  border-radius: 6px;
   padding-left: 5px;
-  font-size: 20px;
-  text-align: center;
+  font-size: 16px;
+  text-align: start;
   margin: 5px;
+  background: none;
   background-color: #3b5998;
   color: white;
   cursor: pointer;
-}
+} */
 
 .sign-out {
   margin-top: 50px;
 }
 
+
+.type-room {
+  /* background-color: aqua; */
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin-inline: auto;
+  margin-top: 40px;
+  align-items: center;
+}
+
+.type-room label {
+  font-size: x-large;
+  height: 100%;
+  margin-block: auto;
+
+}
+
+.type-room button {
+  border: none;
+  padding-left: 5px;
+  font-size: 14px;
+  text-align: start;
+  margin: 5px;
+  height: 35px;
+  padding-inline: 15px;
+  background: none;
+  background-color: #3b5998;
+  color: white;
+  cursor: pointer;
+}
+
+.type-room input {
+  height: 30px;
+}
+
+.chat-rooms h3 {
+  margin-bottom: 10px;
+}
+
+.chat-rooms ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.chat-rooms li {
+  margin-bottom: 10px;
+}
+
+.chat-rooms button {
+  /* color: white; */
+  border: none;
+  padding-left: 5px;
+  font-size: 16px;
+  text-align: start;
+  margin: 5px;
+  background: none;
+  padding: 10px;
+  cursor: pointer;
+  text-align: start;
+  text-decoration: underline;
+}
+
+label {
+  font-size: 16px;
+  color: #555555;
+}
+
+input[type="checkbox"] {
+  margin-left: 10px;
+  transform: scale(1.2);
+  width: 25px;
+  height: 100%;
+  margin-block: auto;
+}
+
+h1,
+h2 {
+  color: #333333;
+}
+
+button:focus,
+input:focus {
+  outline: none;
+}

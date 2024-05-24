@@ -2,10 +2,14 @@ import { auth, provider } from "../firebase-config.js";
 import { signInWithPopup } from "firebase/auth";
 import "../styles/Auth.css";
 import Cookies from "universal-cookie";
+import { signOut } from "firebase/auth";
+import { useState } from "react";
 
 const cookies = new Cookies();
 
-export const Auth = ({ setIsAuth }) => {
+export const Auth = ({ setIsInChat }) => {
+  const [isAuth, setIsAuth] = useState(cookies.get("auth-token"));
+
   const signInWithGoogle = async () => {
     try {
       const result = await signInWithPopup(auth, provider);
@@ -15,10 +19,26 @@ export const Auth = ({ setIsAuth }) => {
       console.error(err);
     }
   };
+
+  const signUserOut = async () => {
+    await signOut(auth);
+    cookies.remove("auth-token");
+    setIsAuth(false);
+    setIsInChat(false);
+  };
+
   return (
     <div className="auth">
-      <p> Sign In With Google To Continue </p>
-      <button onClick={signInWithGoogle}> Sign In With Google </button>
+      {!isAuth ? (
+        <div>
+          <button onClick={signInWithGoogle}> Sign In </button>
+        </div>
+      ) : (
+        <div>
+          <button>Account</button>
+          <button onClick={signUserOut}> Sign Out</button>
+        </div>
+      )}
     </div>
   );
 };
